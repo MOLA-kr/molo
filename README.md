@@ -1,3 +1,6 @@
+![MOLO_ICON](https://user-images.githubusercontent.com/122800378/230761283-a09ac809-43b8-4444-b7b7-85b1b5c461fc.png)
+
+
 # What is MOLO
 
 MOLO is a shot-load API for compositing artists who use NUKE.
