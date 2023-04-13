@@ -138,3 +138,79 @@ You can find the log file that named '`molo_test.log`' on '`~/.config/Molo/`'.
 - login access
 - output file load success or fail
 - Nuke file create success or fail
+
+
+# How to use MOLO Widget
+
+
+ MOLO Widget is a graphical user interface built on to of the MOLO API, using Pyside2.
+ 
+ MOLO Widget contains three widgets: the Main Widget, the Login Widget, and the Host Widget.
+ 
+ The 'Login Widget' allows users to input their ID and password, while the Host Widget provides a field for the user
+ to enter the host URL. 
+ 
+ The "Remember Me" feature saves user information in JSON format,
+ which is stored locally in the ".config" directory.
+ 
+ The 'Main widget' contains all the other main functions.
+ 
+ 
+## 1) Main Widget:
+   1-1) User Button:
+        Displays information about the currently logged-in user and provided a logout function.
+        Connected to the 'molo_user_frame.py' module.
+        
+   1-2) Task Tree:
+        Displays a tree of the tasks and can be used as a search engine for the shots.
+        
+   1-3) Reload Button:
+        Reloads the list of compositing tasks assigned to the currently logged-in user.
+        
+   1-4) Task Browser:
+        Displays information about shots assigned to the user,
+        including thumbnails, project name, sequence name, and shot name.
+        Users can sort shots using criteria set in the QComboBox.
+        The default criterion is the order of the shots, with options to sort shots by 'Due date' and 'Priority'.
+        Selecting a shot thumbnail displays additional information in the sidebar.
+        
+   1-5) Side Thumbnail:
+        Displays detailed information about the selected shot,
+        including Project name, Sequence name, Shot name, Frame Range, Resolution, FPS, and Revision.
+        
+   1-6) Comment Box:
+        Displays comments related to the selected compositiong task.
+        
+   1-7) Task Table Browser:
+        Displays data related to the output file of other tasks required by the compositor,
+        including Task Type, Status, Version, Extension, and Updated date.
+        Version information is marked using icons.
+        All rows are selected by default, but users can select or deselect items by clicking on them.
+        The reload task table browser button('🔄') allows users to refresh the table.
+        
+   1-8) Open / Load in Nuke:
+        When no node is set and the current Nuke file is 'untitled', the button shows 'Open in Nuke'.
+        Clicking it creates or opens the working file of the selected task.
+        When a certain shot and nodes are already set, the button shows 'Load Selected Files'.
+        Clicking it creates or updates the nodes of the selected output files.
+        
+        
+## 2) MVC:
+   2-1) Task Table Model:
+        Displays data related to the output files of other tasks required by the compositor.
+        
+   2-2) Task Browser Model:
+        Displays tasks assigned to the Compositor ana marks them as current status.
+        The tooltip shows due date and priority.
+        
+        
+## 3) MOLO Panel:
+   To use MOLO Panel in Nuke:
+        '~/.nuke/menu.py' :
+        
+        IMPORT PANEL EXAMPLE
+        
+        from nukescripts import panels
+        from molo_main_panel import MoloWidget
+        panels.registerWidgetAsPanel('MoloWidget', 'MOLO Panel', 'molo_panel.molo')
+        
