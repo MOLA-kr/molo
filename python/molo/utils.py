@@ -1,4 +1,4 @@
-import gazu.task
+import gazu
 import os
 import json
 from .exceptions import *
