@@ -7,6 +7,10 @@ MOLO is a shot-load API for compositing artists who use NUKE.
 
 This API uses [Gazu API](https://github.com/cgwire/gazu) to get data from [Kitsu](https://github.com/cgwire/kitsu) database.
 
+| [![Demo Reel](https://img.youtube.com/vi/gKKFInaVVOg/0.jpg)](https://www.youtube.com/watch?v=gKKFInaVVOg) | 
+|:--:| 
+| *Demo Reel ([Click to open on YouTube](https://www.youtube.com/watch?v=gKKFInaVVOg))* |
+
 # **How to use MOLO API**
 
 ## Login
